@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": ""
+      "image": "arthurburle/multi-client"
     }
   ]
 }
