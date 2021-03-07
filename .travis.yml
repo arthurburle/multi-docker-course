@@ -23,3 +23,15 @@ after_success:
   - docker push arthurburle/multi-nginx
   - docker push arthurburle/multi-server
   - docker push arthurburle/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: sa-east-1
+  app: multi-docker
+  env: Multidocker-env
+  bucket_name: elasticbeanstalk-sa-east-1-175515831517
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
